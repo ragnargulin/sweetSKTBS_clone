@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SweetSKTBS - Online shop</title>
+    <link rel="stylesheet" href="SKTBSStyle.css">
+</head>
+
+<body>
+    <div id="header"></div> <!-- Här återanvänds headern som komponent. Optimerad kod + navigering -->
+    <section>
+        <div class="videoWrapper">
+        <video autoplay loop muted class="video" >
+            <source src="/images/video.mp4"> <!--Media-->
+          Video of people surfing and skating. There's also a dog.
+        </video>
+    </div>
+    <img src="/images/sweet-skate-logo.svg" width="100%" height="100%" alt="Sweet SKTBS®"> <!-- Logotyp-->
+    </section>
+    <div id="footer"></div> <!-- Här återanvänds footern som komponent. Optimerad kod -->
+</body>
+
+<script>
+    fetch('SKTBSHeader.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header').innerHTML = data;
+      });
+  
+    fetch('SKTBSFooter.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer').innerHTML = data;
+      });
+</script>
+
+</html>
